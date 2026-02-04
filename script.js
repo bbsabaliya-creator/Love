@@ -148,15 +148,20 @@ setInterval(() => {
 
 }, 500);
 
-// Screenshot Button Logic
-const screenshotBtn = document.getElementById("screenshotBtn");
+// Screenshot Feature
+document.addEventListener("DOMContentLoaded", () => {
 
-if (screenshotBtn) {
+  const btn = document.getElementById("screenshotBtn");
 
-  screenshotBtn.addEventListener("click", () => {
+  if (!btn) {
+    console.log("Screenshot button not found!");
+    return;
+  }
+
+  btn.addEventListener("click", () => {
 
     // Hide button before capture
-    screenshotBtn.style.display = "none";
+    btn.style.visibility = "hidden";
 
     setTimeout(() => {
 
@@ -164,13 +169,18 @@ if (screenshotBtn) {
 
         const link = document.createElement("a");
 
-        link.download = "my_valentine_moment.png";
-        link.href = canvas.toDataURL();
+        link.download = "valentine-moment.png";
+        link.href = canvas.toDataURL("image/png");
 
         link.click();
 
-        // Show button again
-        screenshotBtn.style.display = "inline-block";
+        // Show again
+        btn.style.visibility = "visible";
+
+      }).catch(err => {
+
+        console.error("Screenshot error:", err);
+        btn.style.visibility = "visible";
 
       });
 
@@ -178,5 +188,6 @@ if (screenshotBtn) {
 
   });
 
-}
+});
+
 
