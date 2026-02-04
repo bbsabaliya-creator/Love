@@ -108,23 +108,9 @@ body {
   }
 }
 #screenshotBtn {
-  margin-top: 25px;
-
-  padding: 12px 22px;
-  border: none;
-  border-radius: 25px;
-
-  background: linear-gradient(135deg, #ff4d6d, #ff85a1);
-  color: white;
-
-  font-size: 1rem;
-  font-weight: 600;
-
   cursor: pointer;
-
-  box-shadow: 0 5px 15px rgba(255,77,109,0.4);
-
-  transition: all 0.3s ease;
+  z-index: 9999;
+  position: relative;
 }
 
 #screenshotBtn:hover {
