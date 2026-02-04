@@ -1,3 +1,52 @@
+// Valentine Week Start Date (7 Feb)
+const startDate = new Date("2026-02-07T00:00:00");
+
+const comingSoon = document.getElementById("comingSoon");
+const mainContent = document.getElementById("mainContent");
+const countdown = document.getElementById("countdown");
+
+function checkDate() {
+  const now = new Date();
+
+  if (now < startDate) {
+    // Show Coming Soon
+    comingSoon.style.display = "block";
+    mainContent.hidden = true;
+
+    startCountdown();
+
+  } else {
+    // Show Main Website
+    comingSoon.style.display = "none";
+    mainContent.hidden = false;
+  }
+}
+
+function startCountdown() {
+
+  setInterval(() => {
+
+    const now = new Date();
+    const diff = startDate - now;
+
+    if (diff <= 0) {
+      location.reload();
+      return;
+    }
+
+    const days = Math.floor(diff / (1000*60*60*24));
+    const hours = Math.floor((diff / (1000*60*60)) % 24);
+    const mins = Math.floor((diff / (1000*60)) % 60);
+    const secs = Math.floor((diff / 1000) % 60);
+
+    countdown.innerHTML =
+      `${days} Days ${hours}h ${mins}m ${secs}s 💗`;
+
+  }, 1000);
+}
+
+checkDate();
+
 const title = document.getElementById("title");
 const question = document.getElementById("question");
 const yesBtn = document.getElementById("yesBtn");
