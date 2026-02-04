@@ -148,24 +148,24 @@ setInterval(() => {
 
 }, 500);
 
-// Screenshot Feature
+// Screenshot Feature (Hide Only Button)
 document.addEventListener("DOMContentLoaded", () => {
 
   const btn = document.getElementById("screenshotBtn");
 
-  if (!btn) {
-    console.log("Screenshot button not found!");
-    return;
-  }
+  if (!btn) return;
 
   btn.addEventListener("click", () => {
 
-    // Hide button before capture
-    btn.style.visibility = "hidden";
+    // Hide ONLY the button
+    btn.style.opacity = "0";
 
     setTimeout(() => {
 
-      html2canvas(document.body).then(canvas => {
+      html2canvas(document.body, {
+        useCORS: true,
+        backgroundColor: null
+      }).then(canvas => {
 
         const link = document.createElement("a");
 
@@ -174,20 +174,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
         link.click();
 
-        // Show again
-        btn.style.visibility = "visible";
-
-      }).catch(err => {
-
-        console.error("Screenshot error:", err);
-        btn.style.visibility = "visible";
+        // Restore button
+        btn.style.opacity = "1";
 
       });
 
-    }, 300);
+    }, 200);
 
   });
 
 });
+
 
 
