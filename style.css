@@ -7,7 +7,11 @@ html, body {
 .container {
   min-height: 100vh;
 }
-
+/* ADD THIS */
+.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
 /* Floating Symbols */
 .symbol {
   position: fixed;
