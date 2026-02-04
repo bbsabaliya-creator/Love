@@ -1,32 +1,24 @@
 const CONFIG = {
 
-  unlockDate: "2026-02-07",
+  name: "Hey My Sweet Heart 💖",
 
-  loverName: "Hey My Sweet Heart 💖",
+  letter: `
+My Love ❤️,
 
-  music: true,
+Every day with you
+feels like Valentine’s Day.
 
-  questions: [
-    {
-      q: "Do you love me? 💕",
-      yes: "Yeeees 😍",
-      no: "Try Again 😜"
-    },
-    {
-      q: "How much is it? 💖",
-      yes: "Infinity ♾️",
-      no: "More 😘"
-    },
-    {
-      q: "Will you be mine forever? Again ? 💍",
-      yes: "Yes Always 💞",
-      no: "No Option 😏"
-    }
-  ],
+Thank you for choosing me,
+loving me,
+and completing me.
+
+Forever Yours,
+Bhargav 💍💘
+`,
 
   week: {
 
-"02-07": {
+    "02-07": {
       name: "Rose Day 🌹",
       emoji: "🌹",
       symbol: "🌹",
@@ -91,5 +83,4 @@ const CONFIG = {
     }
 
   }
-
 };
