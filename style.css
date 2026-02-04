@@ -1,0 +1,18 @@
+/* Floating Symbols */
+.symbol {
+  position: fixed;
+  font-size: 30px;
+  animation: fall linear infinite;
+  pointer-events: none;
+}
+
+@keyframes fall {
+  from {
+    transform: translateY(-10vh);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(110vh);
+    opacity: 0;
+  }
+}
