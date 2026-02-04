@@ -66,10 +66,22 @@ body {
 
 .timer {
   margin-top: 20px;
-  font-size: 1.3rem;
-  color: #d6336c;
+  font-size: 1.4rem;
   font-weight: bold;
+
+  color: #fff;
+
+  text-shadow:
+    0 0 5px #fff,
+    0 0 15px #ff4d6d,
+    0 0 30px #ff85a1;
+
+  background: rgba(0,0,0,0.25);
+  padding: 8px 16px;
+  border-radius: 12px;
+  display: inline-block;
 }
+
 @keyframes fadeZoom {
   from {
     opacity: 0;
