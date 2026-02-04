@@ -2,57 +2,48 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title> For my Pasandida Aurat💖</title>
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Valentine 💖</title>
 
   <link rel="stylesheet" href="style.css">
+
+  <!-- Screenshot Library -->
+  <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
 </head>
 
 <body>
-<!-- Coming Soon Screen -->
-<div id="comingSoon" class="coming-soon">
 
-  <h1>💌 Coming Soon 💌</h1>
+<!-- Music -->
+<audio id="bgMusic" src="music.mp3" autoplay loop></audio>
 
-  <p>
-    This surprise is waiting for you... <br><br>
-    Come back on <b>7th February</b> 💖
-  </p>
 
-  <p class="timer" id="countdown"></p>
+<!-- Capture Area -->
+<div id="capture">
 
-</div>
+  <div class="card">
 
-  <div class="container fade-in hidden" id="capture" >
+    <h1>💌 Coming Soon 💌</h1>
 
-    <h1 id="title"></h1>
+    <p>This surprise is waiting for you...</p>
 
-    <p id="question"></p>
+    <p>Come back on <b id="dateText"></b> 💖</p>
 
-    <div class="buttons">
-      <button id="yesBtn">Yes 💘</button>
-      <button id="noBtn">No 😝</button>
-    </div>
+    <div id="timer"></div>
 
-    <!-- Final Celebration GIF -->
-    <img id="finalGif" src="love.gif" alt="Love" hidden>
+    <img src="love.gif" class="gif">
 
   </div>
 
-
-  <!-- Background Music -->
-  <audio id="bgMusic" src="love.mp3" loop></audio>
+</div>
 
 
-  <!-- Screenshot Message -->
- <button id="screenshotBtn" type="button">
-  📸 Save This Moment 💖
+<!-- Screenshot Button -->
+<button id="saveBtn" onclick="takeScreenshot()">
+📸 Save This Moment 💖
 </button>
 
-  <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
-  <script src="config.js"></script>
-  <script src="script.js"></script>
+
+<script src="config.js"></script>
+<script src="script.js"></script>
 
 </body>
 </html>
