@@ -149,34 +149,46 @@ setInterval(() => {
 }, 500);
 
 // Screenshot Feature (Hide Only Button)
-function takeScreenshot() {
+document.addEventListener("DOMContentLoaded", () => {
 
-  const box = document.getElementById("capture");
+  const btn = document.getElementById("screenshotBtn");
+  const target = document.getElementById("capture");
 
-  // Show main content before capture
-  box.classList.remove("hidden");
+  if (!btn || !target) return;
 
-  // Hide only button
-  document.getElementById("screenshotBtn").style.display = "none";
+  btn.addEventListener("click", () => {
 
-  setTimeout(() => {
+    // Hide button
+    btn.style.display = "none";
 
-    html2canvas(box).then(canvas => {
+    // Remove blur/filter temporarily
+    const oldFilter = target.style.filter;
+    target.style.filter = "none";
 
-      // Download image
+    html2canvas(target, {
+      useCORS: true,
+      scale: 2,
+      backgroundColor: null,
+      windowWidth: target.scrollWidth,
+      windowHeight: target.scrollHeight
+    }).then(canvas => {
+
       const link = document.createElement("a");
-      link.download = "my_valentine_moment.png";
-      link.href = canvas.toDataURL();
+
+      link.download = "valentine-moment.png";
+      link.href = canvas.toDataURL("image/png");
       link.click();
 
-      // Restore UI after capture
-      document.getElementById("screenshotBtn").style.display = "block";
-      box.classList.add("hidden");
+      // Restore
+      btn.style.display = "block";
+      target.style.filter = oldFilter;
 
     });
 
-  }, 200); // small delay for rendering
-}
+  });
+
+});
+
 
 
 
