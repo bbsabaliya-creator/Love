@@ -1,68 +1,40 @@
-/* ===========================
-   💖 VALENTINE CONFIG FILE 💖
-   Edit only this file
-   =========================== */
+const CONFIG = {
 
+  unlockDate: "2026-02-07",
 
-/* 🎯 Main Date (When surprise unlocks) */
-const TARGET_DATE = "2026-02-07";
+  loverName: "Hey My Sweet Heart 💖",
 
+  music: true,
 
-/* 💌 Main Texts */
+  questions: [
+    {
+      q: "Do you love me? 💕",
+      yes: "Yeeees 😍",
+      no: "Try Again 😜"
+    },
+    {
+      q: "How much is it? 💖",
+      yes: "Infinity ♾️",
+      no: "More 😘"
+    },
+    {
+      q: "Will you be mine forever? Again ? 💍",
+      yes: "Yes Always 💞",
+      no: "No Option 😏"
+    }
+  ],
 
-const TITLE_TEXT = "💌 Coming Soon 💌";
+  week: {
 
-const SUB_TEXT = "This surprise is waiting for you...";
+    7: { name: "Rose Day 🌹", float: "🌹🌹🌹" },
+    8: { name: "Propose Day 💍", float: "💍💍💍" },
+    9: { name: "Chocolate Day 🍫", float: "🍫🍫🍫" },
+    10:{ name: "Teddy Day 🧸", float: "🧸🧸🧸" },
+    11:{ name: "Promise Day 🤝", float: "🤝🤝🤝" },
+    12:{ name: "Hug Day 🤗", float: "🤗🤗🤗" },
+    13:{ name: "Kiss Day 💋", float: "💋💋💋" },
+    14:{ name: "Valentine Day ❤️", float: "❤️❤️❤️" }
 
-const COME_BACK_TEXT = "Come back on";
+  }
 
-const READY_TEXT = "💖 It's Time! 💖";
-
-
-/* 📸 Screenshot Button */
-
-const SCREENSHOT_TEXT = "📸 Save This Moment 💖";
-
-const SCREENSHOT_FILE_NAME = "valentine_moment.png";
-
-
-/* 🎵 Music Settings */
-
-const MUSIC_AUTOPLAY = true;
-const MUSIC_LOOP = true;
-const MUSIC_VOLUME = 0.6; // 0.0 to 1.0
-
-
-/* 🎨 Theme Colors */
-
-const BACKGROUND_START = "#ff4b7d";
-const BACKGROUND_END   = "#b3003c";
-
-const CARD_BG_OPACITY = 0.15;
-
-
-/* 💝 GIF Settings */
-
-const GIF_WIDTH = "150px";
-const GIF_VISIBLE = true;
-
-
-/* ⏳ Timer Style */
-
-const TIMER_BG = "rgba(0,0,0,0.3)";
-const TIMER_TEXT_COLOR = "#ffffff";
-const TIMER_FONT_SIZE = "18px";
-
-
-/* 📱 Mobile Optimization */
-
-const MOBILE_CARD_WIDTH = "90%";
-
-
-/* 🌟 Extra Features */
-
-const SHOW_TIMER = true;
-const SHOW_GIF = true;
-const SHOW_BUTTON = true;
-
-const ENABLE_SCREENSHOT = true;
+};
