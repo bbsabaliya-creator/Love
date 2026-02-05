@@ -123,6 +123,7 @@ if (today === "02-14") {
   startConfetti();
   startFireworks();
 }
+}
 
 
 // Day Animation
