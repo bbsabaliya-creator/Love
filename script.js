@@ -86,23 +86,23 @@ function finish(){
   startSymbols();
 
   if (today === "02-14") {
-    startConfetti();
     startFireworks();
   }
 } // Fixed the missing brace here
 
-function startSymbols(){
-  setInterval(()=>{
+function startSymbols() {
+  setInterval(() => {
     const el = document.createElement("div");
-    el.className="symbol";
+    el.className = "symbol";
     el.innerText = DAY.symbol;
-    el.style.left = Math.random()*100+"vw";
-    el.style.animationDuration = Math.random()*3+4+"s";
+    el.style.left = Math.random() * 100 + "vw";
+    el.style.animationDuration = Math.random() * 3 + 4 + "s";
     document.body.appendChild(el);
-    setTimeout(()=>el.remove(),7000);
-  },300);
+    setTimeout(() => el.remove(), 7000);
+  }, 300);
 }
 
+// Floating hearts in the background
 setInterval(() => {
   const heart = document.createElement("div");
   heart.className = "heart";
@@ -113,27 +113,78 @@ setInterval(() => {
   setTimeout(() => heart.remove(), 6000);
 }, 500);
 
-function startConfetti() {
-  const colors = ["#ff4d6d", "#ffd166", "#06d6a0", "#118ab2", "#ef476f"];
-  setInterval(() => {
-    const confetti = document.createElement("div");
-    confetti.className = "confetti";
-    confetti.style.left = Math.random() * 100 + "vw";
-    confetti.style.background = colors[Math.floor(Math.random() * colors.length)];
-    confetti.style.animationDuration = Math.random() * 3 + 3 + "s";
-    document.body.appendChild(confetti);
-    setTimeout(() => confetti.remove(), 6000);
-  }, 150);
-}
-
+/* --- Improved Fireworks (Canvas-based) --- */
 function startFireworks() {
-  setInterval(() => {
-    const firework = document.createElement("div");
-    firework.className = "firework";
-    firework.style.left = Math.random() * 80 + 10 + "vw";
-    firework.style.top = Math.random() * 50 + 10 + "vh";
-    firework.style.background = `hsl(${Math.random() * 360},100%,60%)`;
-    document.body.appendChild(firework);
-    setTimeout(() => firework.remove(), 1500);
-  }, 1200);
+  const canvas = document.createElement('canvas');
+  canvas.style.position = 'fixed';
+  canvas.style.top = '0';
+  canvas.style.left = '0';
+  canvas.style.width = '100vw';
+  canvas.style.height = '100vh';
+  canvas.style.pointerEvents = 'none';
+  canvas.style.zIndex = '999';
+  document.body.appendChild(canvas);
+
+  const ctx = canvas.getContext('2d');
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+
+  let particles = [];
+
+  class Particle {
+    constructor(x, y, color) {
+      this.x = x;
+      this.y = y;
+      this.color = color;
+      this.velocity = {
+        x: (Math.random() - 0.5) * 8, // Blast spread
+        y: (Math.random() - 0.5) * 8
+      };
+      this.alpha = 1; // For fading
+      this.friction = 0.95; // Slows them down over time
+    }
+
+    draw() {
+      ctx.globalAlpha = this.alpha;
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, 2.5, 0, Math.PI * 2, false);
+      ctx.fillStyle = this.color;
+      ctx.fill();
+    }
+
+    update() {
+      this.velocity.x *= this.friction;
+      this.velocity.y *= this.friction;
+      this.y += 0.08; // Small gravity effect
+      this.x += this.velocity.x;
+      this.y += this.velocity.y;
+      this.alpha -= 0.01; // Fade speed
+    }
+  }
+
+  function createFirework() {
+    const x = Math.random() * canvas.width;
+    const y = Math.random() * (canvas.height * 0.5); // Explode in top half
+    const color = `hsl(${Math.random() * 360}, 100%, 60%)`;
+    for (let i = 0; i < 40; i++) {
+      particles.push(new Particle(x, y, color));
+    }
+  }
+
+  function animate() {
+    requestAnimationFrame(animate);
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    
+    particles.forEach((particle, i) => {
+      if (particle.alpha > 0) {
+        particle.update();
+        particle.draw();
+      } else {
+        particles.splice(i, 1);
+      }
+    });
+  }
+
+  setInterval(createFirework, 1000); // New firework every second
+  animate();
 }
