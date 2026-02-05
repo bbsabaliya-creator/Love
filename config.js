@@ -19,19 +19,21 @@ Bhargav 💍💘
   week: {
 
     "02-07": {
-      name: "Rose Day 🌹",
-      emoji: "🌹",
-      symbol: "🌹",
-      title: "Happy Rose Day My Love",
-      final: "My love blooms for you 🌹💖"
+        name: "Rose Day 🌹",
+        emoji: "🌹",
+        symbol: "🌹",
+        title: "Happy Rose Day My Love",
+        question: "Did you like my rose? 🌹💖",
+        final: "My love blooms for you 🌹💖"
     },
 
     "02-08": {
-      name: "Propose Day 💍",
-      emoji: "💍",
-      symbol: "💍",
-      title: "Happy Propose Day My Love",
-      final: "Will you be mine forever? 💍💘"
+        name: "Propose Day 💍",
+        emoji: "💍",
+        symbol: "💍",
+        title: "Happy Propose Day My Love",
+        question: "Will you always be mine? 💍💘",
+        final: "You are my forever 💍💖"
     },
 
     "02-09": {
@@ -39,6 +41,7 @@ Bhargav 💍💘
       emoji: "🍫",
       symbol: "🍫",
       title: "Happy Chocolate Day My Sweetheart",
+      question: "Do you love my sweetness? 🍫💖",
       final: "You are sweeter than chocolate 🍫💖"
     },
 
@@ -47,6 +50,7 @@ Bhargav 💍💘
       emoji: "🧸",
       symbol: "🧸",
       title: "Happy Teddy Day My Cutie",
+      question: "Will you hug me forever? 🧸❤️",
       final: "You are my favorite teddy 🧸💘"
     },
 
@@ -55,6 +59,7 @@ Bhargav 💍💘
       emoji: "⭐",
       symbol: "⭐",
       title: "Happy Promise Day My Love",
+      question: "Will you stay with me always? 🤞💘",
       final: "I promise you my forever 🤞💖"
     },
 
@@ -63,6 +68,7 @@ Bhargav 💍💘
       emoji: "🤗",
       symbol: "💞",
       title: "Happy Hug Day My Life",
+      question: "Can I hug you every day? 🤗❤️",
       final: "My arms are your home 🤗❤️"
     },
 
@@ -71,6 +77,7 @@ Bhargav 💍💘
       emoji: "💋",
       symbol: "💋",
       title: "Happy Kiss Day My Heart",
+      question: "Can I steal a kiss? 😘💖",
       final: "Your kisses are my addiction 😘💖"
     },
 
@@ -79,6 +86,7 @@ Bhargav 💍💘
       emoji: "❤️",
       symbol: "❤️",
       title: "Happy Valentine’s Day My Forever",
+      question: "Will you be mine forever? 💍💖",
       final: "You are my today, tomorrow, always ❤️💍"
     }
 
