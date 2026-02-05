@@ -108,7 +108,7 @@ question.innerText = DAY.final;
 
   startSymbols();
   startConfetti();
-  startFireworks();;
+  startFireworks();
 }
 
 
