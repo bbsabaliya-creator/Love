@@ -75,7 +75,11 @@ const DAY = CONFIG.week[today] || CONFIG.week["02-14"];
 
 // Init
 title.innerText = `Hey ${CONFIG.name} ${DAY.emoji}`;
-question.innerText = DAY.title;
+question.innerHTML = `
+  <div>${DAY.title}</div>
+  <div style="margin-top:10px;font-size:1.1rem;">
+    ${DAY.question}
+  </div>;
 yesBtn.innerText = "Continue 💖";
 
 
@@ -93,7 +97,10 @@ noBtn.onmouseover = ()=>{
   noBtn.style.transform =
   `translate(${Math.random()*200-100}px,${Math.random()*200-100}px)`;
 };
-
+// No Click Message 😄💖
+noBtn.onclick = () => {
+  alert("Heyyy 😝💖 No is not allowed my Loveedubby  ❤️");
+};
 
 // Finish
 function finish(){
@@ -103,10 +110,15 @@ question.innerText = DAY.final;
   yesBtn.style.display="none";
   noBtn.style.display="none";
 
-  finalGif.hidden=false;
+  // Show GIF only on Valentine Day
+if (today === "02-14") {
+  finalGif.hidden = false;
+}
   screenshotText.style.display="block";
 
-  startSymbols();
+ startSymbols();
+
+if (today === "02-14") {
   startConfetti();
   startFireworks();
 }
