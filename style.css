@@ -106,3 +106,58 @@ body {
     transform: translateY(-10vh);
   }
 }
+/* Main Container */
+.container {
+  text-align: center;
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(12px);
+  padding: 40px;
+  border-radius: 25px;
+  color: white;
+  box-shadow: 0 0 25px rgba(255,105,180,0.4);
+}
+
+/* Buttons */
+.buttons {
+  margin-top: 20px;
+}
+
+.buttons button {
+  padding: 10px 25px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  margin: 0 10px;
+  background: #ff4d6d;
+  color: white;
+  transition: 0.3s;
+}
+
+.buttons button:hover {
+  background: #ff85a1;
+}
+
+/* Fade In */
+.fade-in {
+  animation: fadeIn 2s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+#screenshotText {
+  position: fixed;
+  bottom: 20px;
+  font-size: 1rem;
+  color: white;
+  display: none;
+  text-shadow: 0 0 5px pink;
+}
